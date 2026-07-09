@@ -20,7 +20,7 @@ function Dashboard({ user }) {
   const [odevler, setOdevler] = useState([]);
   const [yuklenenDosya, setYuklenenDosya] = useState(null);
   const [duyurular, setDuyurular] = useState([]); 
-
+// deneme
   // --- Hoca State'leri ---
   const [materyaller, setMateryaller] = useState([]);
   const [teslimler, setTeslimler] = useState([]);

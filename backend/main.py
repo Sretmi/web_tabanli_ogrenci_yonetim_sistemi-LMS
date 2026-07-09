@@ -6,7 +6,7 @@ import mysql.connector
 import uvicorn
 import shutil
 import os
-
+# deneme.
 # 1. Veritabanı Bağlantısı (Normal API işlemleri için)
 from db_config import get_connection
 
