@@ -1,51 +1,69 @@
-# 🎓 Web Tabanlı Öğrenci Yönetim Sistemi (LMS)
+# 🎓 Web-Based Learning Management System (LMS)
 
-Bu proje, üniversite süreçlerini (ders seçimi, notlandırma, ödev teslimi ve duyurular) dijitalleştiren kapsamlı bir **Veritabanı Yönetim Sistemi** uygulamasıdır. 
+This project is a comprehensive **Database Management System** application designed to digitize university academic workflows, including course registration, grading, assignment submissions, and announcements.
 
-Modern web mimarisi kullanılarak geliştirilmiş olup, iş mantığının büyük bir kısmı veritabanı seviyesinde (**Stored Procedures, Triggers**) yönetilmiştir.
+Built on modern web architecture, the application delegates a significant portion of its core business logic directly to the database layer via **Stored Procedures** and **Triggers**.
 
-## 🚀 Özellikler
+---
 
-- **Rol Tabanlı Yetkilendirme (RBAC):** Yönetici, Akademisyen ve Öğrenci için özelleştirilmiş paneller.
-- **Akademisyen Paneli:** Ders oluşturma, ödev verme, not girişi ve duyuru yayınlama.
-- **Öğrenci Paneli:** Ders seçimi, ödev yükleme, not görüntüleme ve transkript takibi.
-- **Gelişmiş Veritabanı Mimarisi:** - Tüm CRUD işlemleri **Saklı Yordamlar (Stored Procedures)** ile yapılmıştır.
-  - Veri bütünlüğü **Tetikleyiciler (Triggers)** ile sağlanmıştır.
-  - Karmaşık raporlamalar için **JOIN** yapıları kullanılmıştır.
+## 🚀 Features
 
-## 🛠️ Kullanılan Teknolojiler
+- **Role-Based Access Control (RBAC):** Tailored interfaces and permission boundaries for Administrators, Faculty, and Students.
+- **Faculty Portal:** Course management, assignment creation, grade entry, and announcement publishing.
+- **Student Portal:** Course registration, assignment file uploads, grade tracking, and transcript viewing.
+- **Advanced Database Architecture:**
+  - Complete CRUD operations encapsulated inside **Stored Procedures**.
+  - Business rules and data integrity enforced through **Triggers**.
+  - Optimized queries and reporting powered by complex relational **JOIN** operations.
+
+---
+
+## 🛠️ Tech Stack
 
 - **Backend:** Python (FastAPI)
 - **Frontend:** React.js (Vite)
-- **Veritabanı:** MySQL
-- **Veri İletişimi:** REST API (Axios)
+- **Database:** MySQL
+- **Data Communication:** REST API (Axios)
 
-## ⚙️ Kurulum ve Çalıştırma
+---
 
-Projeyi yerel makinenizde çalıştırmak için adımları takip edin.
+## ⚙️ Setup and Installation
 
-### 1. Veritabanı Kurulumu
-- `ogrenci_lms` adında bir MySQL veritabanı oluşturun.
-- Sırasıyla şu SQL dosyalarını içe aktarın (Import):
-  1. `setup.sql` (Tablolar)
-  2. `procedures.sql` (Prosedürler)
-  3. `dummy_data.sql` (Örnek Veriler)
+Follow the steps below to run the project locally.
 
-### 2. Backend (Sunucu)
-# Gerekli kütüphaneleri yükleyin
+### 1. Database Setup
+1. Create a MySQL database named `ogrenci_lms`.
+2. Import the SQL initialization scripts in the following order:
+   - `setup.sql` (Schema and Tables)
+   - `procedures.sql` (Stored Procedures)
+   - `dummy_data.sql` (Mock Data)
+
+### 2. Backend Setup
+```bash
+# Install required Python dependencies
 pip install fastapi uvicorn mysql-connector-python python-multipart
 
-# Sunucuyu başlatın
+# Start the API server
 python main.py
+```
 
-### 3. Frontend (Arayüz)
+### 3. Frontend Setup
+```bash
 cd src
-# Paketleri yükleyin
-npm install
-# Uygulamayı başlatın
-npm run dev
 
-TEST giriş bilgileri
-Yönetici	admin@gmail.com	12345
-Akademisyen	ahmet.hoca@uni.edu.tr	12345
-Öğrenci	ogrenci1@gmail.com	12345
+# Install dependencies
+npm install
+
+# Start the Vite development server
+npm run dev
+```
+
+---
+
+## 🔑 Test Credentials
+
+| Role | Email | Password |
+| :--- | :--- | :--- |
+| **Administrator** | `admin@gmail.com` | `12345` |
+| **Faculty** | `ahmet.hoca@uni.edu.tr` | `12345` |
+| **Student** | `ogrenci1@gmail.com` | `12345` |
